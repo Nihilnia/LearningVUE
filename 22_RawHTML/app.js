@@ -1,8 +1,8 @@
 const app = Vue.createApp({
   data() {
     return {
-      goalFirstWord: "Learn",
-      goalLastWord: "Asap",
+      goalFirstWord: "<h1>Learn</h1>",
+      goalLastWord: "<h1>ASAP</h1>",
       names: ["V", "U", "E"],
       randomLetter: "",
       tryDaObj: {
@@ -18,16 +18,16 @@ const app = Vue.createApp({
       console.log("selectRandomLetter");
 
       if (Math.random() > 0.5) {
-        this.randomLetter = this.goalFirstWord;
+        console.log("First Word");
+        return this.goalFirstWord;
       } else {
-        this.randomLetter = this.goalLastWord;
+        console.log("Last Word");
+        return this.goalLastWord;
       }
     },
   },
   mounted() {
-    setInterval(() => {
-      this.selectRandomLetter();
-    }, 500);
+    this.selectRandomLetter();
   },
 });
 

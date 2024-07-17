@@ -23,8 +23,7 @@
       <p>{{ goalFirstWord }}</p>
       <span v-for="f in names" :key="f">{{ f }}</span>
       <p>{{ goalLastWord }}</p>
-      <h3>Randomly selected letter: {{ randomLetter }}</h3>
-      <button v-on:click="selectRandomLetter">Select Random Letter</button>
+      <div v-html="selectRandomLetter()"></div>
     </section>
 
     <script src="app.js"></script>
