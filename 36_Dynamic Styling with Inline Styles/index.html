@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+    <style>
+      body {
+        background-color: #0c0c0d;
+      }
+
+      .active {
+        border-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Dynamic Styling</h1>
+    </header>
+    <section id="styling">
+      <div class="demo" id="boxOne" onclick="daClick(e)"></div>
+      <div class="demo"></div>
+      <div class="demo"></div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
