@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js" defer></script>
+
+    <style>
+      .makeItRed {
+        border-color: red;
+        background-color: salmon;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Dynamic Styling</h1>
+    </header>
+    <section id="styling">
+      <div @click="boxSelected('A')" :class="['demo', boxAClasses]">A</div>
+      <div @click="boxSelected('B')" :class="['demo', boxBClasses]">B</div>
+      <div @click="boxSelected('C')" :class="['demo', boxCClasses]">C</div>
+      <div @click="boxSelected('D')" :class="['demo', boxDClasses]">D</div>
+      <div
+        @click="boxSelected('E')"
+        :class="['demo', {makeItRed: boxESelected}]"
+      >
+        E
+      </div>
+    </section>
+
+    <!-- <script>
+      let boxA = document.querySelector("#abc");
+      boxA.addEventListener("click", function () {
+        boxA.classList.toggle("makeItRed");
+      });
+    </script> -->
+  </body>
+</html>
