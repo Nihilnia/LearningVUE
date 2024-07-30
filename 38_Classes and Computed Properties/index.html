@@ -15,6 +15,7 @@
     <style>
       .makeItRed {
         border-color: red;
+        background-color: salmon;
       }
     </style>
   </head>
@@ -23,21 +24,10 @@
       <h1>Vue Dynamic Styling</h1>
     </header>
     <section id="styling">
-      <div
-        class="demo"
-        @click="boxSelected('A')"
-        :style="{borderColor: boxASelected ? 'red' : '#ccc'}"
-      ></div>
-      <div
-        class="demo"
-        @click="boxSelected('B')"
-        :style="{borderColor: boxBSelected ? 'red' : '#ccc'}"
-      ></div>
-      <div
-        class="demo"
-        @click="boxSelected('C')"
-        :style="{borderColor: boxCSelected ? 'red' : '#ccc'}"
-      ></div>
+      <div class="demo" @click="boxSelected('A')" :class="boxAClasses"></div>
+      <div class="demo" @click="boxSelected('B')" :class="boxBClasses"></div>
+      <div class="demo" @click="boxSelected('C')" :class="boxCClasses"></div>
+      <div class="demo" @click="boxSelected('D')" :class="boxDClasses"></div>
     </section>
 
     <!-- <script>

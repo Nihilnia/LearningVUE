@@ -15,6 +15,7 @@
     <style>
       .makeItRed {
         border-color: red;
+        background-color: salmon;
       }
     </style>
   </head>
@@ -26,17 +27,22 @@
       <div
         class="demo"
         @click="boxSelected('A')"
-        :style="{borderColor: boxASelected ? 'red' : '#ccc'}"
+        :class="{makeItRed : boxASelected}"
       ></div>
       <div
         class="demo"
         @click="boxSelected('B')"
-        :style="{borderColor: boxBSelected ? 'red' : '#ccc'}"
+        :class="{makeItRed : boxBSelected}"
       ></div>
       <div
         class="demo"
         @click="boxSelected('C')"
-        :style="{borderColor: boxCSelected ? 'red' : '#ccc'}"
+        :class="{makeItRed : boxCSelected}"
+      ></div>
+      <div
+        class="demo"
+        @click="boxSelected('D')"
+        :class="{ makeItRed: boxDSelected}"
       ></div>
     </section>
 
