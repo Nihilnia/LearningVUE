@@ -7,6 +7,7 @@ const App = Vue.createApp({
   },
   methods: {
     getUserInput(event) {
+      console.log((this.userInput = event.target.value));
       this.userInput = event.target.value;
     },
     toggleP() {
@@ -14,6 +15,10 @@ const App = Vue.createApp({
     },
   },
   computed: {
+    daUserInput() {
+      console.log("daUserInput");
+      return this.userInput;
+    },
     paraClasses() {
       if (this.togglePara) {
         return { hidden: this.togglePara };
