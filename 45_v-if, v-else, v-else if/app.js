@@ -7,6 +7,10 @@ const app = Vue.createApp({
       this.goals.push(this.newGoal);
       console.log(this.goals);
     },
+    goalsLength() {
+      console.log(this.goals.length);
+      return this.goals.length === 0 ? true : false;
+    },
   },
   computed: {
     allGoals() {

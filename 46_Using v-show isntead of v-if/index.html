@@ -25,12 +25,12 @@
     </header>
     <section id="user-goals">
       <h2>My course goals</h2>
-      <input type="text" v-model="newGoal" />
+      <input type="text" v-model.enter="newGoal" />
       <button v-on:click="addGoal">Add Goal</button>
-      <p v-if="goals.length === 0">
+      <p v-show="goalsLength()">
         No goals have been added yet - please start adding some!
       </p>
-      <ul>
+      <ul v-show="goalsLength() === false">
         <li v-for="f in allGoals">{{f}}</li>
       </ul>
     </section>
