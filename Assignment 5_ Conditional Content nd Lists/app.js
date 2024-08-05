@@ -14,6 +14,9 @@ const App = Vue.createApp({
     toggleList() {
       this.isShown = !this.isShown;
     },
+    removeItem(index) {
+      this.taskList.splice(index, 1);
+    },
   },
 });
 
