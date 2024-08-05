@@ -18,6 +18,11 @@ const App = Vue.createApp({
       this.taskList.splice(index, 1);
     },
   },
+  computed: {
+    buttonCaption() {
+      return this.isShown ? "Hide List" : "Show List";
+    },
+  },
 });
 
 App.mount("#assignment");

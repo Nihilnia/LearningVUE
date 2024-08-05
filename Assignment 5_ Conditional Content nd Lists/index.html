@@ -28,15 +28,17 @@
       <!-- When clicking "Add Task" a new task with the entered text should be added -->
       <input type="text" v-model="newTask" />
       <button @click="addTask">Add Task</button>
-      <ul v-show="isShown">
+      <ul v-if="isShown">
         <!-- 2) Output the list of tasks here -->
-        <li v-for="(f, index) in taskList" @click="removeItem(index)">{{f}}</li>
+        <li v-for="(f, index) in taskList" @click="removeItem(index)" :key="f">
+          {{f}}
+        </li>
       </ul>
       <!-- 3) When the below button is pressed, the list should be shown or hidden -->
       <!-- BONUS: Also update the button caption -->
       <br />
       <button @click="toggleList" v-show="taskList.length !== 0">
-        {{isShown ? "Hide List" : "Show List"}}
+        {{buttonCaption}}
       </button>
     </section>
   </body>
