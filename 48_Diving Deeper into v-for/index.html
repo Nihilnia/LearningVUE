@@ -35,8 +35,16 @@
           {{index % 2 == 1 ? "ABC" : "DEF"}} - {{goal}}
         </li>
       </ul>
+      <!-- You can also loop through objects -->
       <ul>
-        <li v-for="(value, key) in exObject">{{key}}- {{value}}</li>
+        <li v-for="(value, key, index) in exObject">
+          Index: {{index}}<br />Key: {{key}}<br />
+          Value: {{value}}
+        </li>
+      </ul>
+      <!-- You can also loop through numbers -->
+      <ul>
+        <li v-for="f in 10">{{f}}</li>
       </ul>
     </section>
   </body>
