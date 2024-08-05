@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Sankofa+Display&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div id="grid-container">
+      <section id="section-user-input">
+        <input
+          type="text"
+          placeholder="New todo"
+          v-model="newTask"
+          v-on:keypress.enter="addTask"
+        />
+
+        <button v-on:click="addTask">Add</button>
+      </section>
+      <section id="section-todo-list">
+        <h2>{{h2Text()}}</h2>
+        <div id="todoz">
+          <p>Todos</p>
+          <div
+            v-for="(f, index) in tasks"
+            @click="completeTask(index)"
+            :key="f"
+          >
+            {{index + 1}}- {{f}}
+          </div>
+        </div>
+        <div id="donez">
+          <p>Completed</p>
+          <div class="doneItem" v-for="(f, index) in completedTasks">
+            {{index + 1}}- {{f}}
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
