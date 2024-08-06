@@ -24,32 +24,32 @@ app.mount("#app");
 
 // msgOne = "aaaaaaaa";
 
-let dummy = "dDDDummy";
+let dummy = "Dummy";
 
 const data = {
   message: `Hello!`,
-  longMessage: `Hello!!` + dummy,
+  longMessage: `Hello!!` + dummy, // Hello!! Dummy
 };
 
-dummy = "NOT DUMMY";
+dummy = "not dummy ";
 
-console.log(data.message);
-console.log(data.longMessage);
+console.log("#######################");
 
 const handler = {
   set(target, key, value) {
     if (key === "message") {
-      target.message = value + "World!!";
+      target.message = value + "  World!!";
     } else if (key === `longMessage`) {
-      target.longMessage = value + "Breeze!";
+      target.longMessage = value + " Breeze!";
     }
   },
 };
 
 const proxy = new Proxy(data, handler);
 
-proxy.message = "AAAABCCC";
-proxy.longMessage = "ASHDFJGHDJF";
+// Setting the properties through the proxy
+proxy.message = proxy.message; // This will trigger the handler
+proxy.longMessage = proxy.longMessage; // This will trigger the handler
 
 console.log(proxy.message);
 console.log(proxy.longMessage);
