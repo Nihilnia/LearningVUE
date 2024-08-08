@@ -14,6 +14,8 @@
   box-sizing: border-box;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+
 html {
   font-family: "Jost", sans-serif;
 }
