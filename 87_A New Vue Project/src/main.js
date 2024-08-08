@@ -1,12 +1,5 @@
 import { createApp } from "vue";
 
-createApp({
-  data() {
-    return {
-      abc: "abc",
-    };
-  },
-  mounted() {
-    console.log(this.abc);
-  },
-}).mount("#app");
+import App from "./App.vue";
+
+createApp(App).mount("#app");
