@@ -13,7 +13,7 @@
 | **`v-text`**  | Text content binding         |             | `v-text="message"`      | Updates the text content of an element.                                    |
 | **`v-html`**  | Raw HTML binding             |             | `v-html="rawHTML"`      | Binds raw HTML to an element.                                              |
 
-## data
+## Data
 
 - function itself.
 - returns all the data we want to use.
@@ -25,9 +25,16 @@
     },
   ```
 
-## methods
+## Methods
 
 - We are defining our functions here.
+  ```jsx
+  methods: {
+    doSomething(){
+      //processes..
+    }
+  }
+  ```
 
 ## computed
 
