@@ -1,16 +1,17 @@
 # Side notes
 
-`v-on`
-
-`v-bind`
-
-`v-for`
-
-`v-once`
-
-`v-model`
-
-`$event`
+| **Keyword**   | **Description**              | **Shorter** | **Example**             | **Usage/Notes**                                                            |
+| ------------- | ---------------------------- | ----------- | ----------------------- | -------------------------------------------------------------------------- |
+| **`v-on`**    | Event binding                | `@`         | `@click="handleClick"`  | Binds an event listener to an element.                                     |
+| **`v-bind`**  | Attribute binding            | `:`         | `:src="imageSrc"`       | Dynamically binds an attribute to an expression.                           |
+| **`v-for`**   | List rendering               |             | `v-for="item in items"` | Renders a list of items using an array or object.                          |
+| **`v-once`**  | Render element & component   |             | `v-once`                | Renders the element/component only once. Prevents re-rendering on updates. |
+| **`v-model`** | Two-way data binding         |             | `v-model="inputValue"`  | Creates a two-way binding on form inputs.                                  |
+| **`v-if`**    | Conditional rendering        |             | `v-if="isVisible"`      | Renders the element based on the truthy value of an expression.            |
+| **`v-else`**  | Conditional rendering (else) |             | `v-else`                | Must be used after `v-if` or `v-else-if` for conditional rendering.        |
+| **`v-show`**  | Toggle element visibility    |             | `v-show="isVisible"`    | Toggles the display of an element via CSS `display`.                       |
+| **`v-text`**  | Text content binding         |             | `v-text="message"`      | Updates the text content of an element.                                    |
+| **`v-html`**  | Raw HTML binding             |             | `v-html="rawHTML"`      | Binds raw HTML to an element.                                              |
 
 ## data
 
