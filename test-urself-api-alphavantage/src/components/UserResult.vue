@@ -60,7 +60,7 @@ export default {
   border: 1px solid rgba(255, 255, 255, 0.3);
   display: grid;
   padding: 20px;
-  max-width: fit-content;
+  max-width: 400px;
   row-gap: 30px;
   color: #fff;
 }

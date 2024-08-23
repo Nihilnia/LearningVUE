@@ -7,7 +7,7 @@
         type="text"
         placeholder="Search"
         v-model="userInput"
-        @keypress.enter="passUserInput"
+        @keypress.enter="passUserInput($event)"
       />
     </div>
 
@@ -23,10 +23,11 @@ export default {
     };
   },
   methods: {
-    passUserInput() {
+    passUserInput(e) {
       this.$emit("pass-user-input", this.userInput);
       console.log("Data passed:");
       console.log(this.userInput);
+      e.target.value = "";
     },
   },
 };
@@ -58,8 +59,8 @@ body {
 }
 .search__input {
   width: 100%;
-  max-width: 90%;
-  padding: 12px 24px;
+  max-width: 100%;
+  padding: 12px 0;
   background-color: transparent;
   transition: transform 250ms ease-in-out;
   font-size: 14px;
