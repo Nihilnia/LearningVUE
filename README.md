@@ -36,7 +36,7 @@
   }
   ```
 
-## computed
+## Computed
 
 - If the data you are showing in the page that changes dynamically then you are using computed properties.
 
@@ -55,20 +55,19 @@ computed: {
 <p>Your Name: {{ computedFullName }}</p>
 ```
 
-## watch
+## Watch
 
 - Our watchers lives here!
 
 <aside>
 💡 Name of the watcher must be the same that what you want to watch.
-
 </aside>
 
 ```jsx
 watch: {
 	name(newVal, oldVal){
 		console.log(`New value of the name: ${newVal},
-									old value was: ${oldVal}`)
+                             old value was: ${oldVal}`)
 		this.fullName = `${newVal} ${this.lastName}`
 	}
 }
@@ -97,4 +96,50 @@ Vue.createApp({
     },
   },
 });
+```
+
+## Provide and Injection
+
+- When the project gets bigger; gets complicated. Passing information one of another getting a complicated and problematic. So, we have injections!
+
+```jsx
+//App.vue
+provide(){
+  objectToPass: 'someValue',
+  functionToPass: function(){
+    console.log('Hello world.')
+  }
+}
+```
+
+Now we can get that passed data' s.
+
+```jsx
+///Child.vue
+<h2>{{objectToPass}}</h2>
+<button @onclick='functionToPass'>Blyat</button>
+
+inject: ['objectToPass', 'functionToPass']
+```
+
+💡 Theres somethings to know:
+
+- You can refer any data, what I mean
+
+```jsx
+//App.vue
+data(){
+  return{
+    sampleData: null
+  }
+},
+provide(){
+  return{
+    objectToPass: 'someValue',
+    functionToPass: function(){
+      console.log('Hello world.')
+    },
+    referToSampleData: this.sampleData
+  }
+}
 ```
